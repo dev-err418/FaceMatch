@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    /> -->
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script defer src="render.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <title>Face match</title>
+  </head>
+  <body onload="askForPythonComputing()">
+    <a href="knownFaces.html"
+      ><button
+        id="back-button"
+        onclick="deleteKnowPaths()"
+        class="button is-dark is-normal is-rounded"
+      >
+        Anuler
+      </button></a
+    >
+    <div id="title-div">
+      <div id="text-div">
+        <h4>Processing... Calculs en cours!</h4>
+      </div>
+    </div>
+    <div id="progress-div">
+      <progress id="progress-bar" class="progress is-dark" max="100">20%</progress>
+    </div>
+    <div id="python-log-div">
+      <div id="text-div">
+        <h5>
+          L'ordinateur compare le visage de départ avec les autres photos. Pour
+          différencier les visages, il trace des points à des endroits clés
+          (lèvres, nez, ...) et mesure les distances entre ceux-ci. Si deux
+          visages comparés ont des mesures semblables alors l'orinateur déduira
+          que ce sont les mêmes.
+        </h5>
+        <h2 style="font-weight: bold; padding-top: 20px;">Si une photo apparait, le programme attend que vous cliquiez sur "entrée" pour continuer !</h2>
+      </div>
+    </div>
+  </body>
+</html>

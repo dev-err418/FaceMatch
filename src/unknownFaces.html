@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    /> -->
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script defer src="render.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <title>Face match</title>
+  </head>
+  <body onload="draggedPic(2)">
+    <a href="knownFaces.html"
+      ><button
+        id="back-button"
+        onclick="deleteKnowPaths()"
+        class="button is-dark is-normal is-rounded"
+      >
+        Anuler
+      </button></a
+    >
+    <div id="text-div">
+      <h2 style="font-size: large;">Photos à comparer au visage.</h2>
+    </div>
+    <div id="drag-div">
+      <h6 style="font-size: smaller;">
+        Pour continuer, glissez-deposez les photos à comparer. Les photos de
+        qualité sont à préférer.
+      </h6>
+    </div>
+    <a href="pythonProcessing.html"
+      ><button
+        id="next-button-unknown"
+        onclick="nextScreen(2)"
+        class="button is-dark is-medium is-rounded"
+      >
+        Suivant
+      </button></a
+    >
+    <div id="img-div"></div>
+    <h4 id="counter"></h4>
+    <div id="drag-file-unknown"></div>
+  </body>
+</html>

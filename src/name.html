@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    /> -->
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script defer src="render.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <title>Face match</title>
+  </head>
+  <body onload="draggedPic(1)">
+    <div id="text-div">
+      <h2 style="font-size: large;">Entrez le prénom de la personne.</h2>
+      <h6 style="font-size: smaller; padding-top: 20px;">
+        Minimum 1 lettre, maximum 10.
+      </h6>
+    </div>
+    <div id="input-div">
+      <input
+        id="input-name"
+        class="input"
+        type="text"
+        placeholder="Prénom de la personne comparée"
+      />
+    </div>
+    <a href="unknownFaces.html"
+      ><button
+        id="next-button"
+        class="button is-dark is-medium is-rounded"
+        onclick="nextName()"
+      >
+        Suivant
+      </button></a
+    >
+    <script>
+      var valeur = "";
+      const textInput = document.getElementById("input-name");
+      textInput.addEventListener("input", (a) => setValue(a));
+      const setValue = (a) => {
+        valeur = a.target.value;
+        if (valeur.length < 1) {
+          document.getElementById("next-button").style.display = "none";
+        } else if (valeur.length > 10) {
+          document.getElementById("next-button").style.display = "none";
+        } else {
+          if (document.getElementById("txt-err")) {
+            document.getElementById("txt-err").remove;
+          }
+          document.getElementById("next-button").style.display = "block";
+        }
+      };
+
+      const nextName = () => {
+        name(valeur);
+      };
+    </script>
+  </body>
+</html>

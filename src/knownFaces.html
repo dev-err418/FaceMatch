@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    /> -->
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <script defer src="render.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <title>Face match</title>
+  </head>
+  <body onload="draggedPic(1)">
+    <div id="text-div">
+      <h1 style="font-weight: bolder; font-size: x-large; padding-bottom: 20px;">Face mach</h1>
+      <h4>
+        Face mach est une application qui permet de classifier des visages. Il
+        vous faut : <br>  - quelques photos nettes d'un visage,</br> - ainsi que des photos à
+        comparer.
+      </h4>
+      <p>
+        Cette application est codée avec Electron (html, javascript et css) et
+        python.
+      </p>
+    </div>
+    <div id="drag-div">
+      <h6 style="font-size: smaller;">Pour commencer, glissez-deposez les photos (jpg ou jpeg) du visage à comparer.<br>Pour augmenter les chances de réuissite:</br> - veillez à ne bien mettre qu'une seule personne, <br>  - les gros plans sur le visage sont vivement recommendés,</br>  - les photos doivent chronologiquement corréspondre aux photos à comparer.</h6>
+    </div>
+    <div id="img-div"></div>
+    <a href="name.html"
+      ><button
+        id="next-button"
+        onclick="nextScreen(1)"
+        class="button is-dark is-medium is-rounded"
+      >
+        Suivant
+      </button></a
+    >
+    <h4 id="counter"></h4>
+    <div id="drag-file"></div>
+  </body>
+</html>
